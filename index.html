@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नवयुवक लक्ष्मी पूजा समिति गंग्यापार कुरंगा मऊ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gold: #FFD700;
+            --secondary-maroon: #8B0000;
+            --light-beige: #FFF8E7;
+            --dark-brown: #3E2723;
+            --accent-green: #2E8B57;
+        }
+        #qrCodeFloat {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: var(--primary-gold);
+    color: var(--dark-brown);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    z-index: 1050;
+  }
+  #qrCodeFloat:hover {
+    background: #e6b800;
+  }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-beige);
+            color: var(--dark-brown);
+            padding-top: 80px;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--secondary-maroon), #6A0D0D);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: var(--primary-gold) !important;
+        }
+        
+        .logo-img {
+            height: 70px;
+            margin-right: 10px;
+            animation: glow 2s infinite alternate;
+            border-radius: 70%;
+            
+        }
+        
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5)); }
+            to { filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8)); }
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-gold) !important;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-gold);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .hero-section {
+            background: url('main.jpeg') center/cover no-repeat;
+            height: 550px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--secondary-maroon);
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--primary-gold);
+            margin: 10px auto;
+        }
+        
+    
+    #whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    #whatsapp-float:hover {
+        background-color: #128C7E;
+    }
+
+
+        .card-custom {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+            background: white;
+        }
+        
+        .card-custom:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header-custom {
+            background: linear-gradient(135deg, var(--secondary-maroon), #6A0D0D);
+            color: white;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .donation-progress {
+            height: 25px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #e9ecef;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(to right, var(--accent-green), #32CD32);
+            transition: width 1s ease-in-out;
+        }
+        
+        .event-date {
+            background: var(--primary-gold);
+            color: var(--dark-brown);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .donation-item {
+            border-left: 3px solid var(--primary-gold);
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .expense-item {
+            border-left: 3px solid var(--accent-green);
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--secondary-maroon), #6A0D0D);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: var(--primary-gold);
+            color: var(--dark-brown);
+            transform: translateY(-3px);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(to right, var(--primary-gold), #FFC000);
+            color: var(--dark-brown);
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-gold:hover {
+            background: linear-gradient(to right, #FFC000, #E6B800);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: var(--dark-brown);
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .upload-area {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .upload-area:hover {
+            border-color: var(--primary-gold);
+            background: rgba(255, 215, 0, 0.05);
+        }
+        
+        .modal-content {
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+            
+            .navbar-brand {
+                font-size: 1rem;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="lp.png" alt="" class="logo-img">
+                नवयुवक लक्ष्मी पूजा समिति गंग्यापार कुरंगा मऊ
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home"><i class="fas fa-home me-1"></i> होम</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle me-1"></i> हमारे बारे में</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#events"><i class="fas fa-calendar-alt me-1"></i> कार्यक्रम</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donations"><i class="fas fa-donate me-1"></i> दान विवरण</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery"><i class="fas fa-images me-1"></i> गैलरी</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact"><i class="fas fa-phone me-1"></i> संपर्क</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="display-4 fw-bold">नवयुवक लक्ष्मी पूजा समिति</h1>
+            <p class="lead">गंग्यापार कुरंगा, मऊ</p>
+            <p>सामूहिक प्रयास से मां लक्ष्मी की भव्य पूजा का आयोजन</p>
+            
+    <a href="https://wa.me/8810750317" target="_blank" class="btn btn-gold btn-lg mt-3"><i class="fas fa-hand-holding-heart me-2"></i>दान करें</a>
+        </div>
+    </section>
+<a href="https://wa.me/8810750317" target="_blank" id="whatsapp-float" title="WhatsApp पर संपर्क करें">
+    <i class="fab fa-whatsapp"></i>
+</a>
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">हमारे बारे में</h2>
+            <div class="row">
+                <div class="col-md-6 fade-in">
+                    <div class="card card-custom">
+                        <div class="card-header card-header-custom">
+                            हमारा इतिहास
+                        </div>
+                        <div class="card-body">
+                            <p>नवयुवक लक्ष्मी पूजा समिति की स्थापना 2018 में गंग्यापार कुरंगा, मऊ में हुई थी। हमारा उद्देश्य समुदाय के लोगों को एक साथ लाकर मां लक्ष्मी की भव्य पूजा का आयोजन करना है।</p>
+                            <p>वर्षों से हमारा समिति निरंतर विकास कर रहा है और अब यह क्षेत्र का सबसे बड़ा और प्रसिद्ध पूजा समिति बन गया है।</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <div class="card card-custom">
+                        <div class="card-header card-header-custom">
+                            हमारा उद्देश्य
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">सामुदायिक एकजुटता को बढ़ावा देना</li>
+                                <li class="list-group-item">धार्मिक और सांस्कृतिक कार्यक्रमों का आयोजन</li>
+                                <li class="list-group-item">युवाओं को सनातन संस्कृति से जोड़ना</li>
+                                <li class="list-group-item">पारदर्शिता के साथ सामूहिक कार्य करना</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12 fade-in">
+                    <div class="card card-custom">
+                        <div class="card-header card-header-custom">
+                            समिति सदस्य
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="p.png" alt="समिति अध्यक्ष" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Shivam Dubey</h5>
+                                    <p class="text-muted">अध्यक्ष</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="hb.png" alt="समिति सचिव" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Harsh Dubey</h5>
+                                    <p class="text-muted">सचिव</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="rj.png" alt="समिति कोषाध्यक्ष" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Raj Gond</h5>
+                                    <p class="text-muted">कोषाध्यक्ष</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="vp.png" alt="समिति सदस्य" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Vijay Upadhyay</h5>
+                                    <p class="text-muted">सदस्य</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="an.png" alt="समिति सदस्य" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Ankush Gond</h5>
+                                    <p class="text-muted">सदस्य</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="st.png" alt="समिति सदस्य" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Satyam Upadhyay</h5>
+                                    <p class="text-muted">सदस्य</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="bh.png" alt="समिति सदस्य" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Shivanshu Gond</h5>
+                                    <p class="text-muted">सदस्य</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="su.png" alt="समिति सदस्य" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Sundaram Dubey</h5>
+                                    <p class="text-muted">सदस्य</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="su.png" alt="समिति सदस्य" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Prince Dubey</h5>
+                                    <p class="text-muted">सदस्य</p>
+                                </div>
+                                <div class="col-md-3 col-6 mb-3">
+                                    <img src="https://placeholder-image-service.onrender.com/image/150x150?prompt=Young%20Indian%20committee%20member%20with%20enthusiastic%20expression&id=f6g7h8i9-j0k1-2345-fghi-678901234567" alt="समिति सदस्य" class="rounded-circle mb-2" width="100" height="100">
+                                    <h5>Ajay Upadhyay</h5>
+                                    <p class="text-muted">सदस्य</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">आगामी कार्यक्रम</h2>
+            
+            <div class="row">
+                <div class="col-md-6 fade-in">
+                    <div class="card card-custom mb-4">
+                        <div class="card-header card-header-custom">
+                            मुख्य पूजा कार्यक्रम
+                        </div>
+                        <div class="card-body">
+                            <div class="event-date"><i class="fas fa-calendar me-2"></i> 21 अक्टूबर | 24 अक्टूबर तक, 2025</div>
+                            <h4>लक्ष्मी पूजा महोत्सव</h4>
+                            <p>संध्या 6:00 बजे से रात 10:00 बजे तक</p>
+                            <p>स्थान:गंग्यापार कुरंगा</p>
+                            <ul>
+                                <li>विशेष पूजा अनुष्ठान</li>
+                                <li>भजन-कीर्तन</li>
+                                <li>प्रसाद वितरण</li>
+                                <li>सांस्कृतिक कार्यक्रम</li>
+                                <li>विशाल बिसर्जन</li>
+                            </ul>
+                            <button class="btn btn-gold">अधिक जानकारी</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 fade-in">
+                    <div class="card card-custom mb-4">
+                        <div class="card-header card-header-custom">
+                            अन्य कार्यक्रम
+                        </div>
+                        <div class="card-body">
+                            <div class="event-date"><i class="fas fa-calendar me-2"></i> 25 अक्टूबर, 2025</div>
+                            <h4>विशाल भंडारा</h4>
+                            <p>शाम 5:00 बजे से 10:00 बजे तक</p>
+                            <p>स्थान: गंग्यापार कुरंगा</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+        </div>
+    </section>
+
+    <!-- Donations Section -->
+    
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title fade-in">गैलरी</h2>
+            
+            <div class="row mb-4 fade-in">
+                <div class="col-12">
+                    <div class="upload-area" data-bs-toggle="modal" data-bs-target="#uploadModal">
+                        <i class="fas fa-cloud-upload-alt fa-3x mb-3 text-muted"></i>
+                        <h4>तस्वीरें अपलोड करें</h4>
+                        <p class="text-muted">यहाँ क्लिक करके पूजा की तस्वीरें साझा करें</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row fade-in">
+                <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.10.53 PM.jpeg" alt="पूजा अनुष्ठान" class="gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.10.54 PM (1).jpeg" alt="सजा हुआ पंडाल" class="gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.10.54 PM.jpeg" alt="सामुदायिक सभा" class="gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.10.55 PM.jpeg" alt="दीया और सजावट" class="gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.15.21 PM.jpeg" alt="भक्त पूजा अर्चना करते हुए" class="gallery-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.16.39 PM (1).jpeg" alt="प्रसाद वितरण" class="gallery-img">
+                </div>
+                 <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.16.39 PM (2).jpeg" alt="प्रसाद वितरण" class="gallery-img">
+                </div>
+                
+                 <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.16.40 PM (1).jpeg" alt="प्रसाद वितरण" class="gallery-img">
+                </div>
+                  <div class="col-md-4 mb-4">
+                    <img src="WhatsApp Image 2025-09-19 at 3.16.40 PM.jpeg" alt="प्रसाद वितरण" class="gallery-img">
+                </div>
+            </div>
+            
+            <div class="text-center mt-4 fade-in">
+                <button class="btn btn-gold"><i class="fas fa-images me-2"></i> और तस्वीरें देखें</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">हमसे संपर्क करें</h2>
+            
+            <div class="row fade-in">
+                <div class="col-md-6">
+                    <div class="card card-custom h-100">
+                        <div class="card-header card-header-custom">
+                            संपर्क जानकारी
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <h5><i class="fas fa-map-marker-alt me-2 text-primary"></i> पता</h5>
+                                <p>गंगयापार कुरंग, मऊ, उत्तर प्रदेश - 275101</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5><i class="fas fa-phone me-2 text-primary"></i> फोन नंबर</h5>
+                                <p>+91 8810750317 Harsh Dubey</p>
+                            </div>
+                            <div class="mb-3">
+                                <h5><i class="fas fa-envelope me-2 text-primary"></i> ईमेल</h5>
+                                <p>nouyuaklaxmipuja@gmail.com</p>
+                            </div>
+                            <div class="mt-4">
+                                <h5>सोशल मीडिया पर जुड़ें</h5>
+                                <div class="d-flex mt-2">
+                                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 fade-in">
+                    <div class="card card-custom h-100">
+                        <div class="card-header card-header-custom">
+                            संदेश भेजें
+                        </div>
+                        <div class="card-body">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">आपका नाम</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">ईमेल पता</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">फोन नंबर</label>
+                                    <input type="tel" class="form-control" id="phone">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">संदेश</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-gold w-100">संदेश भेजें</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-4 fade-in">
+                <div class="col-12">
+                    <div class="card card-custom">
+                        <div class="card-header card-header-custom">
+                            हमारा स्थान
+                        </div>
+                        <div class="card-body">
+                            <div id="map" style="height: 300px; border-radius: 8px; overflow: hidden;">
+                                <img src="https://www.google.com/maps/place/Gangyapar,+Apdariya+Harpura,+Uttar+Pradesh+276306/@26.2129604,83.54154,3a,75y,346.12h,90t/data=!3m7!1e1!3m5!1soAVNFEmHyoROxA0HCLGm7g!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DoAVNFEmHyoROxA0HCLGm7g%26yaw%3D346.11935!7i13312!8i6656!4m10!1m2!2m1!1z4KSX4KSC4KSX4KWN4KSv4KS-4KSq4KS-4KSw!3m6!1s0x3991811b01e9b073:0xa9b044c85d109128!8m2!3d26.2128718!4d83.541719!15sChvgpJfgpILgpJfgpY3gpK_gpL7gpKrgpL7gpLCSAQxuZWlnaGJvcmhvb2TgAQA!16s%2Fg%2F11n8ntmgvf?entry=ttu&g_ep=EgoyMDI1MDkxNi4wIKXMDSoASAFQAw%3D%3D" alt="गंग्यापार कुरंगा मऊ का मानचित्र" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>नवयुवक लक्ष्मी पूजा समिति </h5>
+                    <p>गंग्यापार कुरंगा मऊ</p>
+                    <p>सामूहिक प्रयास से मां लक्ष्मी की भव्य पूजा का आयोजन</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>जल्दी लिंक</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">होम</a></li>
+                        <li><a href="#about">हमारे बारे में</a></li>
+                        <li><a href="#events">कार्यक्रम</a></li>
+                        <li><a href="#donations">दान विवरण</a></li>
+                        <li><a href="#gallery">गैलरी</a></li>
+                        <li><a href="#contact">संपर्क</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>हमसे जुड़ें</h5>
+                    <div class="d-flex mb-3">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="mt-3">
+                        <p>Designed by <strong>Vijai</strong></p>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.1);">
+            <div class="text-center">
+                <p>© 2018-25 नवयुवक लक्ष्मी पूजा समिति गंग्यापार कुरंगा मऊ. सभी अधिकार सुरक्षित.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div class="modal fade" id="donationModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, var(--secondary-maroon), #6A0D0D); color: white;">
+                    <h5 class="modal-title">दान फॉर्म</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="donationForm">
+                        <div class="mb-3">
+                            <label for="donorName" class="form-label">आपका नाम *</label>
+                            <input type="text" class="form-control" id="donorName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donorPhone" class="form-label">फोन नंबर</label>
+                            <input type="tel" class="form-control" id="donorPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="donationAmount" class="form-label">दान राशि (₹) *</label>
+                            <input type="number" class="form-control" id="donationAmount" min="1" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="donationMessage" class="form-label">संदेश (वैकल्पिक)</label>
+                            <textarea class="form-control" id="donationMessage" rows="2"></textarea>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="showPublic" checked>
+                            <label class="form-check-label" for="showPublic">
+                                मेरा नाम सार्वजनिक रूप से दिखाएं
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">रद्द करें</button>
+                    <button type="button" class="btn btn-gold" id="submitDonation">दान जमा करें</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal fade" id="uploadModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="background: linear-gradient(135deg, var(--secondary-maroon), #6A0D0D); color: white;">
+                    <h5 class="modal-title">तस्वीर अपलोड करें</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="uploadForm">
+                        <div class="mb-3">
+                            <label for="photoTitle" class="form-label">तस्वीर का शीर्षक</label>
+                            <input type="text" class="form-control" id="photoTitle">
+                        </div>
+                        <div class="mb-3">
+                            <label for="photoUpload" class="form-label">तस्वीर चुनें</label>
+                            <input type="file" class="form-control" id="photoUpload" accept="image/*" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="uploaderName" class="form-label">आपका नाम</label>
+                            <input type="text" class="form-control" id="uploaderName">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">रद्द करें</button>
+                    <button type="button" class="btn btn-gold" id="submitUpload">अपलोड करें</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize donations from localStorage
+            let donations = JSON.parse(localStorage.getItem('donations')) || [];
+            updateDonationDisplay();
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile navbar after clicking
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                });
+            });
+            
+            // Donation form handling
+            document.getElementById('submitDonation').addEventListener('click', function() {
+                const name = document.getElementById('donorName').value;
+                const amount = document.getElementById('donationAmount').value;
+                const message = document.getElementById('donationMessage').value;
+                const showPublic = document.getElementById('showPublic').checked;
+                const phone = document.getElementById('donorPhone').value;
+                
+                if (!name || !amount) {
+                    alert('कृपया अपना नाम और दान राशि दर्ज करें');
+                    return;
+                }
+                
+                const donation = {
+                    name: showPublic ? name : 'अनाम दाता',
+                    amount: parseInt(amount),
+                    message: message,
+                    phone: phone,
+                    date: new Date().toLocaleDateString('hi-IN')
+                };
+                
+                donations.push(donation);
+                localStorage.setItem('donations', JSON.stringify(donations));
+                
+                updateDonationDisplay();
+                
+                // Reset form and close modal
+                document.getElementById('donationForm').reset();
+                bootstrap.Modal.getInstance(document.getElementById('donationModal')).hide();
+                
+                alert('आपके दान के लिए धन्यवाद! 🙏');
+            });
+            
+            // Update donation progress and list
+            function updateDonationDisplay() {
+                const total = donations.reduce((sum, donation) => sum + donation.amount, 0);
+                const progressPercent = Math.min((total / 50000) * 100, 100);
+                
+                document.getElementById('totalDonations').textContent = `कुल दान: ₹${total.toLocaleString('hi-IN')}`;
+                document.querySelector('.progress-bar').style.width = `${progressPercent}%`;
+                document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercent);
+                
+                const donationsList = document.getElementById('recentDonations');
+                if (donations.length === 0) {
+                    donationsList.innerHTML = '<p class="text-center">अभी तक कोई दान नहीं मिला है। पहले दानकर्ता बनें!</p>';
+                } else {
+                    donationsList.innerHTML = '';
+                    const recentDonations = donations.slice(-5).reverse();
+                    
+                    recentDonations.forEach(donation => {
+                        const donationEl = document.createElement('div');
+                        donationEl.className = 'donation-item';
+                        donationEl.innerHTML = `
+                            <h5>${donation.name}</h5>
+                            <p>₹${donation.amount.toLocaleString('hi-IN')} - ${donation.date}</p>
+                            ${donation.message ? `<small class="text-muted">"${donation.message}"</small>` : ''}
+                        `;
+                        donationsList.appendChild(donationEl);
+                    });
+                }
+                
+                // Update finance chart if it exists
+                if (window.financeChart) {
+                    window.financeChart.destroy();
+                }
+                createFinanceChart(total);
+            }
+            
+            // Create finance chart
+            function createFinanceChart(totalDonations) {
+                const ctx = document.getElementById('financeChart').getContext('2d');
+                window.financeChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['कुल दान', 'कुल व्यय', 'शेष राशि'],
+                        datasets: [{
+                            data: [totalDonations, 20000, totalDonations - 20000],
+                            backgroundColor: [
+                                'rgba(46, 139, 87, 0.8)',
+                                'rgba(139, 0, 0, 0.8)',
+                                'rgba(255, 215, 0, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgba(46, 139, 87, 1)',
+                                'rgba(139, 0, 0, 1)',
+                                'rgba(255, 215, 0, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return `${context.label}: ₹${context.raw.toLocaleString('hi-IN')}`;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+            
+            // Initialize finance chart
+            const total = donations.reduce((sum, donation) => sum + donation.amount, 0);
+            createFinanceChart(total);
+            
+            // Contact form handling
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('आपका संदेश भेज दिया गया है! हम जल्द ही आपसे संपर्क करेंगे।');
+                this.reset();
+            });
+            
+            // Upload form handling
+            document.getElementById('submitUpload').addEventListener('click', function() {
+                const fileInput = document.getElementById('photoUpload');
+                if (fileInput.files.length === 0) {
+                    alert('कृपया एक तस्वीर चुनें');
+                    return;
+                }
+                
+                // In a real application, you would upload to a server here
+                alert('तस्वीर अपलोड की गई! वेबसाइट प्रशासक द्वारा समीक्षा के बाद इसे गैलरी में दिखाया जाएगा।');
+                document.getElementById('uploadForm').reset();
+                bootstrap.Modal.getInstance(document.getElementById('uploadModal')).hide();
+            });
+            
+            // Add fade-in animation to elements when they come into view
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
